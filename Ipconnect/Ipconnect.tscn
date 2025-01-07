@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://654m4v7qeu5v"]
+
+[ext_resource type="Script" path="res://Ipconnect/ipconnect.gd" id="1_mtkok"]
+
+[node name="Ipconnect" type="Node" node_paths=PackedStringArray("cancelarButton")]
+script = ExtResource("1_mtkok")
+cancelarButton = NodePath("CenterContainer/VBoxContainer/Buttons_HB/Cancelar_button")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Titulo_HB" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Titulo_label" type="Label" parent="CenterContainer/VBoxContainer/Titulo_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "DATOS DE CONEXIÓN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IP_HB" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="IP_LE" type="LineEdit" parent="CenterContainer/VBoxContainer/IP_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+placeholder_text = "IP"
+alignment = 1
+max_length = 20
+
+[node name="Buttons_HB" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Cancelar_button" type="Button" parent="CenterContainer/VBoxContainer/Buttons_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "Cancelar"
+
+[node name="Conectar_button" type="Button" parent="CenterContainer/VBoxContainer/Buttons_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "Conectar"
+
+[node name="Host_button" type="Button" parent="CenterContainer/VBoxContainer/Buttons_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "Host"

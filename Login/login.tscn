@@ -1,0 +1,140 @@
+[gd_scene load_steps=3 format=3 uid="uid://dut4e6vs130wk"]
+
+[ext_resource type="Script" path="res://Login/login.gd" id="1_htplg"]
+[ext_resource type="Script" path="res://addons/godot-playfab/PlayFabEvent.gd" id="2_js8lw"]
+
+[node name="Login" type="Node" node_paths=PackedStringArray("cancelarButton", "ingresarButton", "registrarButton", "loginOption_button", "registerOption_button", "statusInfo", "userText", "correoText", "passwordText", "correo_HB", "usuario_HB", "playfabEvent")]
+script = ExtResource("1_htplg")
+cancelarButton = NodePath("CenterContainer/VBoxContainer1/Buttons_HB/Cancelar_button")
+ingresarButton = NodePath("CenterContainer/VBoxContainer1/Buttons_HB/Ingresar_button")
+registrarButton = NodePath("CenterContainer/VBoxContainer1/Buttons_HB/registrar_button")
+loginOption_button = NodePath("CenterContainer/VBoxContainer1/Register_HB/LoginOptions_button")
+registerOption_button = NodePath("CenterContainer/VBoxContainer1/Register_HB/RegistrarOptions_button")
+statusInfo = NodePath("StatusInfo")
+userText = NodePath("CenterContainer/VBoxContainer1/Usuario_HB/Usuario_LE")
+correoText = NodePath("CenterContainer/VBoxContainer1/Correo_HB/Correo_LE")
+passwordText = NodePath("CenterContainer/VBoxContainer1/Password_HB/Password_LE")
+correo_HB = NodePath("CenterContainer/VBoxContainer1/Correo_HB")
+usuario_HB = NodePath("CenterContainer/VBoxContainer1/Usuario_HB")
+playfabEvent = NodePath("PlayFabEvent")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Titulo_HB" type="HBoxContainer" parent="CenterContainer/VBoxContainer1"]
+layout_mode = 2
+
+[node name="Titulo_label" type="Label" parent="CenterContainer/VBoxContainer1/Titulo_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "INGRESE SUS DATOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Correo_HB" type="HBoxContainer" parent="CenterContainer/VBoxContainer1"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Correo_LE" type="LineEdit" parent="CenterContainer/VBoxContainer1/Correo_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "juan@gmail.com"
+placeholder_text = "CORREO"
+alignment = 1
+max_length = 20
+
+[node name="Usuario_HB" type="HBoxContainer" parent="CenterContainer/VBoxContainer1"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Usuario_LE" type="LineEdit" parent="CenterContainer/VBoxContainer1/Usuario_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "juan"
+placeholder_text = "USUARIO"
+alignment = 1
+max_length = 20
+
+[node name="Password_HB" type="HBoxContainer" parent="CenterContainer/VBoxContainer1"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Password_LE" type="LineEdit" parent="CenterContainer/VBoxContainer1/Password_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "456123"
+placeholder_text = "PASSWORD"
+alignment = 1
+max_length = 20
+secret = true
+
+[node name="Buttons_HB" type="HBoxContainer" parent="CenterContainer/VBoxContainer1"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Cancelar_button" type="Button" parent="CenterContainer/VBoxContainer1/Buttons_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "Cancelar"
+
+[node name="registrar_button" type="Button" parent="CenterContainer/VBoxContainer1/Buttons_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "Registrar"
+
+[node name="Ingresar_button" type="Button" parent="CenterContainer/VBoxContainer1/Buttons_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "Ingresar"
+
+[node name="Register_HB" type="HBoxContainer" parent="CenterContainer/VBoxContainer1"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RegistrarOptions_button" type="Button" parent="CenterContainer/VBoxContainer1/Register_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 18
+text = "Deseo registrarme"
+flat = true
+
+[node name="LoginOptions_button" type="Button" parent="CenterContainer/VBoxContainer1/Register_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 18
+text = "Ya tengo una cuenta"
+flat = true
+
+[node name="StatusInfo" type="Label" parent="."]
+custom_minimum_size = Vector2(250, 0)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 260.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 18
+
+[node name="PlayFabEvent" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_js8lw")
